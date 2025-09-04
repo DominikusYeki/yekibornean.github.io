@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dominikus Yeki - Language & Education Professional</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 40px;
+            text-align: center;
+            margin-bottom: 30px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .profile-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            margin: 0 auto 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 60px;
+            color: white;
+            font-weight: bold;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+        
+        .name {
+            font-size: 2.8em;
+            font-weight: bold;
+            color: #2c3e50;
+            margin-bottom: 10px;
+        }
+        
+        .title {
+            font-size: 1.3em;
+            color: #667eea;
+            margin-bottom: 20px;
+            font-weight: 500;
+        }
+        
+        .description {
+            font-size: 1.1em;
+            color: #555;
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.7;
+        }
+        
+        .main-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+        
+        .card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.15);
+        }
+        
+        .card h2 {
+            color: #2c3e50;
+            margin-bottom: 20px;
+            font-size: 1.5em;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .icon {
+            width: 30px;
+            height: 30px;
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 16px;
+        }
+        
+        .experience-item {
+            margin-bottom: 20px;
+            padding: 15px;
+            background: rgba(102, 126, 234, 0.1);
+            border-radius: 10px;
+            border-left: 4px solid #667eea;
+        }
+        
+        .experience-item h3 {
+            color: #2c3e50;
+            font-size: 1.1em;
+            margin-bottom: 5px;
+        }
+        
+        .experience-item .role {
+            color: #667eea;
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+        
+        .experience-item .period {
+            color: #777;
+            font-size: 0.9em;
+            font-style: italic;
+        }
+        
+        .portfolio-item {
+            background: rgba(102, 126, 234, 0.1);
+            padding: 15px;
+            border-radius: 10px;
+            margin-bottom: 15px;
+            border-left: 4px solid #764ba2;
+        }
+        
+        .portfolio-item h3 {
+            color: #2c3e50;
+            margin-bottom: 8px;
+        }
+        
+        .portfolio-item p {
+            color: #555;
+            font-size: 0.95em;
+        }
+        
+        .activities-section {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .activities-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        .activity-card {
+            background: rgba(102, 126, 234, 0.1);
+            padding: 20px;
+            border-radius: 15px;
+            border-left: 4px solid #667eea;
+        }
+        
+        .activity-card h3 {
+            color: #2c3e50;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .contact-section {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            text-align: center;
+        }
+        
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        .contact-item {
+            background: rgba(102, 126, 234, 0.1);
+            padding: 20px;
+            border-radius: 15px;
+            transition: transform 0.3s ease;
+        }
+        
+        .contact-item:hover {
+            transform: translateY(-3px);
+        }
+        
+        .contact-item h3 {
+            color: #2c3e50;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+        
+        .contact-item a {
+            color: #667eea;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        
+        .contact-item a:hover {
+            color: #764ba2;
+            text-decoration: underline;
+        }
+        
+        .skills-list {
+            list-style: none;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 10px;
+        }
+        
+        .skills-list li {
+            background: rgba(102, 126, 234, 0.1);
+            padding: 10px 15px;
+            border-radius: 25px;
+            text-align: center;
+            color: #2c3e50;
+            font-weight: 500;
+            border: 2px solid transparent;
+            transition: all 0.3s ease;
+        }
+        
+        .skills-list li:hover {
+            border-color: #667eea;
+            background: rgba(102, 126, 234, 0.2);
+        }
+        
+        @media (max-width: 768px) {
+            .main-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .name {
+                font-size: 2.2em;
+            }
+            
+            .container {
+                padding: 15px;
+            }
+            
+            .header {
+                padding: 25px;
+            }
+            
+            .card {
+                padding: 20px;
+            }
+        }
+        
+        .fade-in {
+            animation: fadeInUp 0.8s ease-out;
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .pulse {
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 0 0 0 rgba(102, 126, 234, 0.7);
+            }
+            70% {
+                box-shadow: 0 0 0 10px rgba(102, 126, 234, 0);
+            }
+            100% {
+                box-shadow: 0 0 0 0 rgba(102, 126, 234, 0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="header fade-in">
+            <div class="profile-img pulse">DY</div>
+            <h1 class="name">Dominikus Yeki</h1>
+            <p class="title">Language & Speech | English Tutor | Copywriter | Author</p>
+            <p class="description">
+                Education and Language professional with expertise in effective communication across diverse industries. 
+                I possess deep understanding of teaching methodologies, research practices, and business strategies. 
+                Ready to apply academic knowledge in professional work environments. With systematic time management skills, 
+                I excel at handling various work challenges efficiently. My multidisciplinary experience enables me to work 
+                independently or in collaborative teams, supported by a strong commitment to continuous learning and achieving success.
+            </p>
+        </header>
+        
+        <div class="main-content">
+            <div class="card fade-in">
+                <h2><span class="icon">💼</span>Work Experience</h2>
+                <div class="experience-item">
+                    <h3>SMPN 25 Pontianak</h3>
+                    <div class="role">English Teacher</div>
+                    <div class="period">2024 – 2025</div>
+                </div>
+                <div class="experience-item">
+                    <h3>BIMBEL Focus</h3>
+                    <div class="role">English Tutor</div>
+                    <div class="period">2023 – 2024</div>
+                </div>
+            </div>
+            
+            <div class="card fade-in">
+                <h2><span class="icon">🎯</span>Core Skills</h2>
+                <ul class="skills-list">
+                    <li>Teaching Methodologies</li>
+                    <li>Research Practices</li>
+                    <li>Business Strategies</li>
+                    <li>Effective Communication</li>
+                    <li>Time Management</li>
+                    <li>Team Collaboration</li>
+                    <li>Creative Writing</li>
+                    <li>Copywriting</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="activities-section fade-in">
+            <h2 style="color: #2c3e50; margin-bottom: 20px; text-align: center;">
+                <span class="icon">🎨</span> Professional Activities & Portfolio
+            </h2>
+            <div class="activities-grid">
+                <div class="activity-card">
+                    <h3><span class="icon">📚</span>Teaching & Mentoring</h3>
+                    <p>Aktif dalam kegiatan pengajaran, pembimbingan siswa, serta terlibat dalam aktivitas pendidikan berbasis bahasa dan komunikasi.</p>
+                </div>
+                <div class="activity-card">
+                    <h3><span class="icon">✍️</span>Copywriting Expertise</h3>
+                    <p>Berfokus pada speech & language, menghasilkan tulisan persuasif, kreatif, dan komunikatif untuk berbagai kebutuhan konten.</p>
+                </div>
+            </div>
+            
+            <div style="margin-top: 30px;">
+                <h3 style="color: #2c3e50; margin-bottom: 15px; text-align: center;">Author Portfolio</h3>
+                <p style="text-align: center; margin-bottom: 20px; color: #555;">
+                    Selain menulis systematic literature review, saya juga seorang penulis kreatif yang berpengalaman dalam:
+                </p>
+                <div class="activities-grid">
+                    <div class="portfolio-item">
+                        <h3>📖 Karya Sastra dan Buku Fantasi</h3>
+                        <p>Menciptakan dunia imajinatif dengan narasi yang mendalam dan karakter yang kompleks.</p>
+                    </div>
+                    <div class="portfolio-item">
+                        <h3>📝 Cerita Pendek</h3>
+                        <p>Mengembangkan narasi singkat yang padat makna dan berkesan bagi pembaca.</p>
+                    </div>
+                    <div class="portfolio-item">
+                        <h3>🧸 Cerita Anak</h3>
+                        <p>Menulis cerita edukatif dan menghibur yang sesuai dengan perkembangan anak.</p>
+                    </div>
+                    <div class="portfolio-item">
+                        <h3>🎭 Tulisan Kreatif Lainnya</h3>
+                        <p>Eksplorasi berbagai genre dan format penulisan kreatif yang inovatif.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="contact-section fade-in">
+            <h2 style="color: #2c3e50; margin-bottom: 20px;">
+                <span class="icon">📱</span> Get In Touch
+            </h2>
+            <div class="contact-grid">
+                <div class="contact-item">
+                    <h3><span class="icon">🌐</span>Freelance Profile</h3>
+                    <a href="#" target="_blank">Fastwork</a>
+                </div>
+                <div class="contact-item">
+                    <h3><span class="icon">📱</span>WhatsApp</h3>
+                    <a href="https://wa.me/6285752833532" target="_blank">+62 8575 2833 532</a>
+                </div>
+                <div class="contact-item">
+                    <h3><span class="icon">✉️</span>Email</h3>
+                    <a href="mailto:yekirahmadana@gmail.com">yekirahmadana@gmail.com</a>
+                </div>
+                <div class="contact-item">
+                    <h3><span class="icon">🔗</span>Linktree</h3>
+                    <a href="https://lynk.id/dailingual" target="_blank">lynk.id/dailingual</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        // Add smooth scrolling animation on load
+        document.addEventListener('DOMContentLoaded', function() {
+            const fadeElements = document.querySelectorAll('.fade-in');
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, { threshold: 0.1 });
+            
+            fadeElements.forEach(el => {
+                el.style.opacity = '0';
+                el.style.transform = 'translateY(30px)';
+                el.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+                observer.observe(el);
+            });
+        });
+        
+        // Add interactive hover effects
+        document.querySelectorAll('.card, .contact-item, .activity-card').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-5px) scale(1.02)';
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0) scale(1)';
+            });
+        });
+        
+        // Add click animation to contact links
+        document.querySelectorAll('.contact-item a').forEach(link => {
+            link.addEventListener('click', function(e) {
+                this.style.transform = 'scale(0.95)';
+                setTimeout(() => {
+                    this.style.transform = 'scale(1)';
+                }, 150);
+            });
+        });
+    </script>
+</body>
+</html>
